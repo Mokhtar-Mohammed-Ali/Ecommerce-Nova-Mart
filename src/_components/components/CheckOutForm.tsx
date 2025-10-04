@@ -27,7 +27,7 @@ export default function CheckoutDialog({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // 🔹 validate inputs
+  //  validate inputs
   function validate(shippingAddress: IShippingAddress): boolean {
     if (!/^[A-Za-z\s]{2,50}$/.test(shippingAddress.city)) {
       setError("City invalid — أدخل اسم مدينة صحيح.");

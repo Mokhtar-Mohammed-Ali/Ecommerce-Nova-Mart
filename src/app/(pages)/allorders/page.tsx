@@ -19,7 +19,7 @@ export default function AllOrdersPage() {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/orders/${userId}`);
+      const response = await fetch(`/api/orders/${userId}`);
       const data: IOrder[] = await response.json();
       setOrders(data);
     } catch (error) {

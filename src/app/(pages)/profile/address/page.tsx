@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { UserAddress } from "@/_components/interFaces/AdressesInterFace";
 import { Trash2 } from "lucide-react";
 import toast from "react-hot-toast";
-import { addAdress, removeAdress } from "@/_components/components/_actions/CartAndProduct";
+import { addAddress, removeAddress } from "@/_components/components/_actions/CartAndProduct";
 
 export default function AddressesPage() {
   const [addresses, setAddresses] = useState<UserAddress[]>([]);
@@ -56,7 +56,7 @@ export default function AddressesPage() {
 
     setError(null);
 
-    const data = await addAdress(name, details, phone, city);
+    const data = await addAddress(name, details, phone, city);
 
     if (data.status === "success") {
       await fetchAddresses();
@@ -73,7 +73,7 @@ export default function AddressesPage() {
   };
 
   const handleDelete = async (id: string) => {
-    const data = await removeAdress(id);
+    const data = await removeAddress(id);
     if (data?.status === "success") {
       await fetchAddresses();
       toast.success("Address deleted");

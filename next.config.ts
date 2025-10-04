@@ -1,16 +1,27 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-   eslint: {
+  eslint: {
     ignoreDuringBuilds: true,
   },
-  /* config options here */
-  images: {
-  domains: ["ecommerce.routemisr.com","images.unsplash.com","assets.aceternity.com"],
-    
 
- 
-},
+  /* ✅ config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ecommerce.routemisr.com",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

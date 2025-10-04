@@ -14,11 +14,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { Button as Button1 } from "@/_components/ui/moving-border";
 import CheckoutDialog from "@/_components/components/CheckOutForm";
-import {
-  removeFromCart,
-  updateQuantayyCart,
-  clearCartItems,
-} from "@/_components/components/_actions/CartAndProduct";
+import { clearCartItems, removeFromCart, updateQuantityCart } from "@/_components/components/_actions/CartAndProduct";
 
 export default function CartPage() {
   const [removeId, setRemoveId] = useState<string | null>(null);
@@ -59,7 +55,7 @@ export default function CartPage() {
   async function UpdateProductCount(productId: string, count: number) {
     setUpdatedId(productId);
     try {
-      const data = await updateQuantayyCart(productId, count);
+      const data = await updateQuantityCart(productId, count);
       setCartData(data);
       if (data.status === "success") toast.success("Quantity updated");
     } catch (err) {

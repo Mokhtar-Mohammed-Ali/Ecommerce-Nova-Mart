@@ -51,6 +51,7 @@ if(user){
   },
   session:({session,token})=>{
 session.user=token.user;
+session.token=token.token
 return session;
   }
 },

@@ -29,7 +29,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
 
     try {
       setLoading(true);
-      const res = await fetch(`/api/favorites`);
+      const res = await fetch(`/api/wishlist`);
       if (!res.ok) throw new Error("Failed to fetch wishlist");
 
       const data = await res.json();
