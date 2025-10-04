@@ -22,7 +22,7 @@ export function WishlistProvider({ children }: { children: ReactNode }) {
 
   const session = useSession();
   const router = useRouter();
-
+console.log(wishlist)
   // GET wishlist
   async function getWishlist() {
     if (session.status !== "authenticated") return;
