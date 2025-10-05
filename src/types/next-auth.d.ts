@@ -1,11 +1,10 @@
-
 import { LoggedUser } from "@/_components/interFaces/loggedUserInterFace";
 import { JWT as DefaultJWT } from "next-auth/jwt";
 
 declare module "next-auth" {
   interface Session {
     user: LoggedUser;
-     token?: string; 
+    token?: string;
   }
 
   interface User {

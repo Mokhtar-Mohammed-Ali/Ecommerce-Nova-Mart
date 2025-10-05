@@ -5,6 +5,6 @@ export default async function page() {
 
 
   return <>
-<SparklesPreview headerContent="Nova Mart" subHeader="Making Online Shopping Effortless"/>
+    <SparklesPreview headerContent="Nova Mart" subHeader="Making Online Shopping Effortless" />
   </>
 }

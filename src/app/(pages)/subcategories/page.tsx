@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default async function SubcategoriesPage() {
   try {
-       const res = await fetch(
+    const res = await fetch(
       `https://ecommerce.routemisr.com/api/v1/subcategories?limit=50`,
-      { next: { revalidate: 6000 } } 
+      { next: { revalidate: 6000 } }
     );
 
 

@@ -2,7 +2,6 @@ import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { FaildLoggedUser, successLoggedUserResponse } from '@/_components/interFaces/loggedUserInterFace';
 
-
 const handler = NextAuth({
 
 providers: [
@@ -36,7 +35,6 @@ return{
       }else{
 throw new Error(payload.message)
       }
-      // Return null if user data could not be retrieved
      
     }
   })

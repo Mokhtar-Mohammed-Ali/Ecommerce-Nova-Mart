@@ -87,9 +87,9 @@ export default function CartPage() {
   return (
     <>
       {loading ||
-      !cartData?.data?.products ||
-      (cartData.data.products.length > 0 &&
-        typeof cartData.data.products[0].product === "string") ? (
+        !cartData?.data?.products ||
+        (cartData.data.products.length > 0 &&
+          typeof cartData.data.products[0].product === "string") ? (
         <Loading />
       ) : (cartData?.data?.products?.length ?? 0) > 0 ? (
         <div className="min-h-screen dark:bg-black py-8">

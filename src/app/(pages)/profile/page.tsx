@@ -54,10 +54,10 @@ export default function UpdateProfileForm({ defaultValues }: { defaultValues: Up
       const data = await res.json();
 
       if (res.ok && data.message === "success") {
-  
+
         toast.success("Profile updated successfully! Please sign in with a new data");
-       await signOut({ callbackUrl: "/login" });
-       
+        await signOut({ callbackUrl: "/login" });
+
       } else if (data.statusMsg === "fail") {
         toast.error(data.message || "Failed to update profile. Please login again.");
       } else {
@@ -71,7 +71,7 @@ export default function UpdateProfileForm({ defaultValues }: { defaultValues: Up
     }
   }
 
-  
+
   return (
     <div className="flex flex-col justify-center items-center min-h-screen  bg-gray-50 dark:bg-gray-900">
       <Card className="w-full max-w-md shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">

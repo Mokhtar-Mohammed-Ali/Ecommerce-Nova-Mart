@@ -3,9 +3,6 @@ import React from "react";
 import { IBrands } from "../../interFaces/Brandsinterface";
 import Link from "next/link";
 import Image from "next/image";
-
-
-
 interface BrandsSliderProps {
   brands: IBrands[];
 }
@@ -26,8 +23,8 @@ export default function Brands({ brands }: BrandsSliderProps) {
           className="bg-white dark:bg-gray-900 border p-4 rounded-lg shadow-sm hover:shadow-md transition flex flex-col items-center"
         >
           <Image
-          width={400}
-          height={400}
+            width={400}
+            height={400}
             src={brand.image}
             alt={brand.name}
             className="w-full h-40 object-contain mb-2 rounded-md"

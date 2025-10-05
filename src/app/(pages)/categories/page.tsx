@@ -14,12 +14,10 @@ export default async function CategoriesPage() {
         Categories
       </h1>
 
-      {/* ====== SLIDER ====== */}
       <CategorySlider categories={categories} />
 
-      {/* ====== GRID ====== */}
       <CategoriesGrid categories={categories} />
-      
+
     </div>
   );
 }

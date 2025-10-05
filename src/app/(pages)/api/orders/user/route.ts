@@ -12,7 +12,6 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ statusMsg: "fail", message: "Unauthorized" }, { status: 401 });
     }
 
-    // استخراج userId من الـ JWT
     let userId: string;
     try {
       const payload = JSON.parse(Buffer.from(token.token.split(".")[1], "base64").toString("utf8"));
@@ -22,7 +21,6 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ statusMsg: "fail", message: "Invalid token" }, { status: 401 });
     }
 
-    // جلب الأوردرات من API الخارجي
     const res = await fetch(`https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`, {
       headers: { token: token.token, "Content-Type": "application/json" },
     });

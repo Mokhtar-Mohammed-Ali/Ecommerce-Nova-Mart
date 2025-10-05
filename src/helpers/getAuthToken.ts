@@ -1,5 +1,3 @@
-
-
 import { decode } from "next-auth/jwt";
 import { NextRequest } from "next/server";
 
@@ -9,10 +7,11 @@ export async function getAuthToken(req: NextRequest) {
 
     if (!cookieHeader) return null;
 
-    const cookies = cookieHeader.split(";").map(c => c.trim());
-    const tokenCookie = cookies.find(c =>
-      c.startsWith("next-auth.session-token=") ||
-      c.startsWith("__Secure-next-auth.session-token=")
+    const cookies = cookieHeader.split(";").map((c) => c.trim());
+    const tokenCookie = cookies.find(
+      (c) =>
+        c.startsWith("next-auth.session-token=") ||
+        c.startsWith("__Secure-next-auth.session-token=")
     );
 
     const tokenValue = tokenCookie?.split("=")?.[1];

@@ -32,7 +32,7 @@ export default async function Products() {
 
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 pb-4">
         {products.map((product) => (
-          <CardContainer product={product} key={product._id}/>
+          <CardContainer product={product} key={product._id} />
         ))}
       </div>
     </>

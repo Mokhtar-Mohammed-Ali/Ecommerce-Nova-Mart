@@ -8,7 +8,7 @@ import {
   Card,
   CardContent,
   CardDescription,
-  
+
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -26,12 +26,12 @@ export default async function ProductDetails({ params }: { params: Params }) {
   return (
     <div className="h-screen container mx-auto flex items-center justify-center">
       <Card className="grid md:grid-cols-3 items-center">
-       
+
         <div className="md:col-span-1 100 py-5">
-         <SliderImages images={product.images} altContect={product.title}/>
+          <SliderImages images={product.images} altContect={product.title} />
         </div>
 
-       
+
         <div className="md:col-span-2 bg-gray-100 py-5">
           <CardHeader>
             <div className="flex items-center justify-between space-y-3">
@@ -66,7 +66,7 @@ export default async function ProductDetails({ params }: { params: Params }) {
             </div>
           </CardContent>
 
-          <AddProductToCard product={product}/>
+          <AddProductToCard product={product} />
         </div>
       </Card>
     </div>

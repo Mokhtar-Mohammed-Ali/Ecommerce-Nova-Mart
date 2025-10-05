@@ -20,7 +20,9 @@ export interface RegisterResponse {
   };
 }
 
-export async function registerAction(values: RegisterPayload): Promise<RegisterResponse> {
+export async function registerAction(
+  values: RegisterPayload
+): Promise<RegisterResponse> {
   try {
     const response = await fetch(
       `https://ecommerce.routemisr.com/api/v1/auth/signup`,

@@ -21,7 +21,6 @@ export default function AuthProvider({children}:{children:ReactNode}) {
        
         <Navbar />
 
-        {/* Main content (زي الـ Outlet) */}
         <main className=" pt-16 bg-gray-100 dark:bg-gray-950">
           {children}
           <Toaster/>

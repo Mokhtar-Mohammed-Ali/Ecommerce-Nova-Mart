@@ -12,7 +12,7 @@ export default function BrandsPage() {
   async function getBrands() {
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:3000/api/brands`);
+      const res = await fetch(`/api/brands`);
       const { data }: { data: IBrands[] } = await res.json();
       setBrands(data || []);
       setLoading(false);

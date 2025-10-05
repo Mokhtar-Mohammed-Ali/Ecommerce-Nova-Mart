@@ -1,12 +1,10 @@
-
-
 "use server";
 
 import { cookies } from "next/headers";
 import { decode } from "next-auth/jwt";
 
 export async function getUserToken() {
-  const cookieStore =await cookies();
+  const cookieStore = await cookies();
 
   // حاول تجيب الكوكي سواء كانت في dev أو production
   const tokenFromCookie =

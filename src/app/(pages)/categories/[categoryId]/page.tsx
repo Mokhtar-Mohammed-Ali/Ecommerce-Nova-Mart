@@ -9,18 +9,18 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const { categoryId } = params;
 
   try {
-    
+
     const resCategory = await fetch(
-      `http://localhost:3000/api/category/${categoryId}`,
+      `/api/category/${categoryId}`,
       { cache: "no-store" }
     );
     if (!resCategory.ok) throw new Error("Failed to fetch category");
 
     const { data: category }: { data: ICategory } = await resCategory.json();
 
-   
+
     const resProducts = await fetch(
-      `http://localhost:3000/api/products/category/${categoryId}`,
+      `/api/products/category/${categoryId}`,
       { cache: "no-store" }
     );
     if (!resProducts.ok) throw new Error("Failed to fetch products");
@@ -37,9 +37,9 @@ export default async function CategoryPage({ params }: { params: Params }) {
               <div
                 key={product._id}
               >
-                <CardContainer product={product}/>
+                <CardContainer product={product} />
 
-          
+
               </div>
             ))
           ) : (

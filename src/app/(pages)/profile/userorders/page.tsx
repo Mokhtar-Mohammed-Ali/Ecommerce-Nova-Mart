@@ -1,7 +1,4 @@
-
-
 "use client";
-
 import { useEffect, useState } from "react";
 import { IOrder } from "@/_components/interFaces/UserOrdersInterface";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

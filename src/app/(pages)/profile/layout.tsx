@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [open, setOpen] = useState(true); 
+  const [open, setOpen] = useState(true);
 
   const navItems = [
     { href: "/profile", label: "My Info" },

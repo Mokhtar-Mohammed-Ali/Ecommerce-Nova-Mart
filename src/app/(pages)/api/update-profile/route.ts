@@ -1,4 +1,3 @@
-
 import { NextRequest, NextResponse } from "next/server";
 import { getAuthToken } from "@/helpers/getAuthToken";
 
@@ -15,14 +14,17 @@ export async function PUT(req: NextRequest) {
 
     const body = await req.json();
 
-    const res = await fetch("https://ecommerce.routemisr.com/api/v1/users/updateMe/", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        token,
-      },
-      body: JSON.stringify(body),
-    });
+    const res = await fetch(
+      "https://ecommerce.routemisr.com/api/v1/users/updateMe/",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          token,
+        },
+        body: JSON.stringify(body),
+      }
+    );
 
     const data = await res.json();
     return NextResponse.json(data, { status: res.status });

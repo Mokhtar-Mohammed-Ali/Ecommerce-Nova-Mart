@@ -1,5 +1,4 @@
 
-
 import { IBrands } from "@/_components/interFaces/Brandsinterface";
 import { NextRequest, NextResponse } from "next/server";
 

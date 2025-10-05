@@ -40,22 +40,22 @@ export default async function SubcategoryDetailPage({ params }: { params: Params
           <h1 className="text-3xl font-bold mb-6 text-center dark:text-amber-300">
             {sub.name}
           </h1>
-         
-          
 
- <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 ">
-  {products && products.length > 0 ? (
-  products.map((product) => (
-    <div key={product._id} >
-      
-      <CardContainer product={product}/>
-    </div>
-  ))
-) : (
-  <h3 className="text-center col-span-full text-gray-900">This subcategory has no products</h3>
-)}
 
-</div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 ">
+            {products && products.length > 0 ? (
+              products.map((product) => (
+                <div key={product._id} >
+
+                  <CardContainer product={product} />
+                </div>
+              ))
+            ) : (
+              <h3 className="text-center col-span-full text-gray-900">This subcategory has no products</h3>
+            )}
+
+          </div>
 
 
         </>

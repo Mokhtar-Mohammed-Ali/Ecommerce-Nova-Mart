@@ -131,7 +131,7 @@ export default function Navbar() {
                     <Link href="/allorders">
                       <DropdownMenuItem>My Orders</DropdownMenuItem>
                     </Link>
-                    <Link href="/address">
+                    <Link href="/profile/address">
                       <DropdownMenuItem>Address</DropdownMenuItem>
                     </Link>
                   </DropdownMenuContent>

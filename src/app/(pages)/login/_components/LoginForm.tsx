@@ -45,7 +45,7 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [forgotOpen, setForgotOpen] = useState(false);
   const [forgotLoading, setForgotLoading] = useState(false);
-const router=useRouter()
+  const router = useRouter()
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
   const callBackUrl = searchParams.get("callBack-Url");
@@ -60,7 +60,7 @@ const router=useRouter()
   const forgotForm = useForm<ForgotSchema>({
     resolver: zodResolver(forgotSchema),
     defaultValues: { email: "" },
-    
+
   });
 
   async function onSubmit(values: LoginSchema) {
@@ -74,36 +74,36 @@ const router=useRouter()
     setLoading(false);
   }
 
-  
+
   async function handleForgot(values: ForgotSchema) {
-  setForgotLoading(true);
-  try {
-    const res = await fetch(
-      `https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: values.email }),
+    setForgotLoading(true);
+    try {
+      const res = await fetch(
+        `https://ecommerce.routemisr.com/api/v1/auth/forgotPasswords`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: values.email }),
+        }
+      );
+
+      const data = await res.json();
+      if (res.ok) {
+        toast.success("Check your email for reset code!");
+
+        localStorage.setItem("resetEmail", values.email);
+        setForgotOpen(false);
+
+        router.push("/verify-reset");
+      } else {
+        toast.error(data.message || "Failed to send reset email");
       }
-    );
-
-    const data = await res.json();
-    if (res.ok) {
-      toast.success("Check your email for reset code!");
-
-      localStorage.setItem("resetEmail", values.email);
-      setForgotOpen(false);
-     
-      router.push("/verify-reset");
-    } else {
-      toast.error(data.message || "Failed to send reset email");
+    } catch {
+      toast.error("Something went wrong");
+    } finally {
+      setForgotLoading(false);
     }
-  } catch{
-    toast.error("Something went wrong");
-  } finally {
-    setForgotLoading(false);
   }
-}
 
 
   return (
@@ -139,7 +139,7 @@ const router=useRouter()
                         <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-5 w-5" />
                         <Input
                           id="email"
-                        
+
                           type="email"
                           autoComplete="email"
                           placeholder="you@example.com"

@@ -10,19 +10,19 @@ interface Params {
 export default async function Brand({ params }: { params: Params }) {
   const { id } = params;
 
- 
+
   const brandResponse = await fetch(`https://ecommerce.routemisr.com/api/v1/brands/${id}`);
   const brandData = await brandResponse.json();
   const brand = brandData.data;
 
-  
+
   const productsResponse = await fetch(`https://ecommerce.routemisr.com/api/v1/products?brand=${id}`);
   const productsData = await productsResponse.json();
   const products: IProduct[] = productsData.data;
 
   return (
     <div className="container mx-auto px-4 py-10">
-      
+
       <div className="flex justify-center mb-10">
         <Card className="max-w-md w-full shadow-lg rounded-2xl bg-white">
           <CardHeader className="text-center">

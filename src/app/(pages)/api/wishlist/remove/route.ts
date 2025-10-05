@@ -10,10 +10,13 @@ export async function DELETE(req: NextRequest) {
 
   const headers: HeadersInit = { token: token.token };
 
-  const res = await fetch(`https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`, {
-    method: "DELETE",
-    headers,
-  });
+  const res = await fetch(
+    `https://ecommerce.routemisr.com/api/v1/wishlist/${productId}`,
+    {
+      method: "DELETE",
+      headers,
+    }
+  );
 
   const data = await res.json();
   return NextResponse.json(data, { status: res.status });
