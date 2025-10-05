@@ -24,7 +24,7 @@ export default function CartContextProvider({ children }: { children: ReactNode 
   const [loading, setLoading] = useState<boolean>(true);
 
   const session = useSession();
-
+console.log(cartData)
   // GET Cart
   async function getCartPrduct() {
     if (session.status !== "authenticated") {
