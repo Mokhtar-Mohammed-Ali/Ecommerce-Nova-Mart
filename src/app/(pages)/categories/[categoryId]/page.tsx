@@ -1,3 +1,4 @@
+
 import { IProduct } from "@/_components/interFaces/productsInterFace";
 import { ICategory } from "@/_components/interFaces/CategoriesInterface";
 import React from "react";
@@ -9,18 +10,16 @@ export default async function CategoryPage({ params }: { params: Params }) {
   const { categoryId } = params;
 
   try {
-
     const resCategory = await fetch(
-      `/api/category/${categoryId}`,
+      `https://ecommerce.routemisr.com/api/v1/categories/${categoryId}`,
       { cache: "no-store" }
     );
     if (!resCategory.ok) throw new Error("Failed to fetch category");
 
     const { data: category }: { data: ICategory } = await resCategory.json();
 
-
     const resProducts = await fetch(
-      `/api/products/category/${categoryId}`,
+      `https://ecommerce.routemisr.com/api/v1/products?category=${categoryId}`,
       { cache: "no-store" }
     );
     if (!resProducts.ok) throw new Error("Failed to fetch products");
@@ -34,16 +33,12 @@ export default async function CategoryPage({ params }: { params: Params }) {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products && products.length > 0 ? (
             products.map((product) => (
-              <div
-                key={product._id}
-              >
+              <div key={product._id}>
                 <CardContainer product={product} />
-
-
               </div>
             ))
           ) : (
-            <h3 className="text-center col-span-full text-gray-900">
+            <h3 className="text-center col-span-full text-gray-900 dark:text-gray-200">
               This Category has no products
             </h3>
           )}
@@ -53,7 +48,7 @@ export default async function CategoryPage({ params }: { params: Params }) {
   } catch (err) {
     console.error("Error fetching category/products:", err);
     return (
-      <div className="p-6 text-red-600">
+      <div className="p-6 text-red-600 dark:text-red-400 text-center">
         Error loading category page. Please try again later.
       </div>
     );
