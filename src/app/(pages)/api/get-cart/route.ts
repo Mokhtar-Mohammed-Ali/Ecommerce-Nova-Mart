@@ -4,6 +4,7 @@ import { cartResponse } from "@/_components/interFaces/CartInterFace";
 import { decode } from "next-auth/jwt";
 
 export async function GET(req: Request) {
+  
   try {
     const cookieHeader = req.headers.get("cookie") || "";
     const match = cookieHeader.match(/next-auth.session-token=([^;]+)/);
@@ -34,4 +35,6 @@ export async function GET(req: Request) {
     console.error("Error fetching cart:", err);
     return NextResponse.json({ data: { products: [] }, numOfCartItems: 0 }, { status: 500 });
   }
+
+  
 }
