@@ -100,26 +100,23 @@ export default function CardContainer({ product }: CardContainerProps){
       {product.category?.name}
     </CardDescription>
 
-    {/* التقييم + السعر */}
     <div className="flex items-center justify-between mt-1">
       <div className="flex items-center gap-1">
         <RatingStars />
-        <RatingStars />
-        <RatingStars />
-        <RatingStars />
+        
         <span className="text-xs text-green-900 dark:text-green-400">
           {product.ratingsAverage}
         </span>
       </div>
 
       <p className="text-sm font-bold text-amber-700 dark:text-white">
-        Price: {product.price} EGP
+      {product.price} EGP
       </p>
     </div>
   </CardContent>
 
   {/* الزر */}
-  <CardFooter className="px-3 pb-3">
+  <CardFooter className="md:px-0 px-3 flex items-center justify-center">
     <AddProductToCard product={product} />
   </CardFooter>
 </Card>

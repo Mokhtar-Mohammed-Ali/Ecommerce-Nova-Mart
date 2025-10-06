@@ -103,7 +103,7 @@ export default function ProductsClient({ initialProducts }: Props) {
   const paginatedProducts = products.slice(start, end);
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className=" mx-auto px-4 py-6">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto dark:text-amber-500">
@@ -117,7 +117,7 @@ export default function ProductsClient({ initialProducts }: Props) {
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar */}
         <aside
-          className={`fixed md:static top-0 left-0 h-full md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 z-50 ${
+          className={`fixed md:static top-0 left-0 h-full md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
           }`}
         >

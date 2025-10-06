@@ -28,7 +28,7 @@ export default function AddProductToCard({ product }: { product: IProduct }) {
 
   const inWishlist = isInWishlist(product._id);
 
-  // 🛒 Add product to cart
+  // Add product to cart
   async function handleAddToCart() {
     if (session.status !== "authenticated") {
       router.push("/login");
@@ -49,7 +49,7 @@ export default function AddProductToCard({ product }: { product: IProduct }) {
     }
   }
 
-  // ❤️ Add or remove from wishlist
+  // Add or remove from wishlist
   async function handleWishlist() {
     if (session.status !== "authenticated") {
       router.push("/login");
@@ -81,8 +81,8 @@ export default function AddProductToCard({ product }: { product: IProduct }) {
 
   return (
     <CardFooter className="relative">
-      <div className="flex justify-between w-full gap-3 items-center">
-        {/* 🛒 Add to Cart Button */}
+      <div className="flex w-full justify-between gap-3 items-center">
+        {/*  Add to Cart Button */}
         <Button1
           disabled={loadingCart}
           onClick={handleAddToCart}
