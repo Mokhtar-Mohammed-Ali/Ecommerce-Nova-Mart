@@ -77,6 +77,7 @@ export default function CardContainer({ product }: CardContainerProps){
           src={product.imageCover}
           alt={product.title}
           fill
+           priority={true}
           className="md:object-cover object-contain p-2 md:p-0 transition-transform duration-300 hover:scale-105"
           sizes="(max-width: 768px) 100vw, 400px"
         />

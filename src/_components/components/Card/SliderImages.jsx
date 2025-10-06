@@ -33,6 +33,7 @@ export default function SliderImages({images,altContect}) {
                       alt={altContect}
                       width={500}
                       height={500}
+                       priority={true}
                       className="object-contain w-full h-[300px] sm:h-[400px]"
                     />
                   </CarouselItem>
