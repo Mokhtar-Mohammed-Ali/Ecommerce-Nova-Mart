@@ -1,11 +1,10 @@
-
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { categoryId: string } }
+  context: { params: Promise<{ categoryId: string }> }
 ) {
-  const { categoryId } = params;
+  const { categoryId } = await context.params;
 
   try {
     const res = await fetch(
