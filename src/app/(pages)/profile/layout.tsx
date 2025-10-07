@@ -1,6 +1,5 @@
 
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -85,7 +84,7 @@ export default function ProfileLayout({ children }: { children: React.ReactNode 
 
       {/* Main Content */}
       <main className="flex-1 p-4 md:p-6">
-        {/* ✅ User Info Section */}
+        {/*User Info Section */}
         {status === "loading" ? (
           <p className="text-center text-sm text-muted-foreground">
             Loading user data...
