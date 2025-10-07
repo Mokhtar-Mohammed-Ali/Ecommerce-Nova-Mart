@@ -73,7 +73,7 @@ export default function UpdateProfileForm({ defaultValues }: { defaultValues: Up
 
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen  bg-gray-50 dark:bg-gray-900">
+    <div className="flex flex-col justify-center items-center min-h-screen ">
       <Card className="w-full max-w-md shadow-lg rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
         <CardHeader>
           <CardTitle className="text-center text-2xl font-bold text-gray-900 dark:text-gray-100">

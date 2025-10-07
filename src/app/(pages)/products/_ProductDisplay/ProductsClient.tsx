@@ -114,11 +114,11 @@ export default function ProductsClient({ initialProducts }: Props) {
         </button>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 ">
         {/* Sidebar */}
         <aside
-          className={`fixed md:static top-0 left-0 h-full md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+          className={`z-10 fixed md:static top-20 md:top-0 left-0 h-screen pt-2 md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${
+            isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0  z-[999]"
           }`}
         >
           {/* Close button */}
@@ -135,7 +135,7 @@ export default function ProductsClient({ initialProducts }: Props) {
             placeholder="Search..."
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
-            className="w-full mb-4 p-2 border rounded-md dark:bg-gray-700 dark:text-white"
+            className="w-full mb-2 p-2 border rounded-md dark:bg-gray-700 dark:text-white"
           />
 
           {/* Price Filter */}
@@ -149,7 +149,7 @@ export default function ProductsClient({ initialProducts }: Props) {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-3">
             <label className="block mb-1 text-gray-700 dark:text-gray-300">Max Price</label>
             <input
               type="number"
@@ -160,7 +160,7 @@ export default function ProductsClient({ initialProducts }: Props) {
           </div>
 
           {/* Categories */}
-          <div className="mb-4">
+          <div className="mb-3">
             <h3 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Categories</h3>
             <div className="max-h-40 overflow-y-auto space-y-1">
               {categories.map((cat) => (
@@ -219,7 +219,7 @@ export default function ProductsClient({ initialProducts }: Props) {
         </aside>
 
         {/* Overlay */}
-        {isSidebarOpen && <div onClick={() => setIsSidebarOpen(false)} className="fixed inset-0 bg-black bg-opacity-40 md:hidden z-40" />}
+        {isSidebarOpen && <div onClick={() => setIsSidebarOpen(false)} className="fixed inset-0  md:hidden z-50" />}
 
         {/* Products Grid */}
         <main className="flex-1">

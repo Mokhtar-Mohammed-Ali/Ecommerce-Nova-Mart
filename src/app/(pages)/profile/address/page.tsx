@@ -83,7 +83,7 @@ export default function AddressesPage() {
   };
 
   return (
-    <div className="p-8 max-w-7xl mx-auto space-y-8">
+    <div className="p-8 max-w-7xl mx-auto space-y-8 ">
       {/* Add Address Form */}
       <div className="bg-card p-6 rounded-2xl shadow-lg border border-border transition-transform hover:scale-[1.01] duration-300">
         <h2 className="text-2xl font-bold mb-4 text-foreground">Add New Address</h2>

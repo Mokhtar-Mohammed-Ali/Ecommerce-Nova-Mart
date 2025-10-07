@@ -72,13 +72,13 @@ export default function CardContainer({ product }: CardContainerProps){
   {/* الصورة */}
   <CardHeader className="p-0 relative">
     <Link href={`/products/${product.id}`}>
-      <div className="relative w-full aspect-[4/4] bg-white dark:bg-gray-800">
+      <div className="z-0 relative w-full aspect-[4/4] bg-white dark:bg-gray-800">
         <Image
           src={product.imageCover}
           alt={product.title}
           fill
            priority={true}
-          className="md:object-cover object-contain p-2 md:p-0 transition-transform duration-300 hover:scale-105"
+          className="z-0 md:object-cover object-contain p-2 md:p-0 transition-transform duration-300 hover:scale-105"
           sizes="(max-width: 768px) 100vw, 400px"
         />
       </div>

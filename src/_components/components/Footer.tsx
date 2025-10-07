@@ -17,7 +17,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-300 dark:bg-neutral-900 text-gray-800 dark:text-gray-300 pt-12">
+    <footer className="bg-gray-300 dark:bg-neutral-900 text-gray-800 dark:text-gray-300 py-12">
       <div className="container mx-auto px-4">
 
         {/* Subscribe & Social */}
