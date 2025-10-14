@@ -31,11 +31,11 @@ export default function ProductsClient({ initialProducts }: Props) {
 
   // Fetch categories & brands on mount
   useEffect(() => {
-    fetch("https://ecommerce.routemisr.com/api/v1/categories")
+    fetch("/api/category")
       .then((res) => res.json())
       .then((data) => setCategories(data.data));
 
-    fetch("https://ecommerce.routemisr.com/api/v1/brands")
+    fetch("/api/brands")
       .then((res) => res.json())
       .then((data) => setBrands(data.data));
   }, []);
@@ -109,7 +109,7 @@ export default function ProductsClient({ initialProducts }: Props) {
         <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto dark:text-amber-500">
           Our Products
         </h1>
-        <button onClick={() => setIsSidebarOpen(true)} className="md:hidden p-2 bg-amber-500 text-white rounded-lg shadow-lg">
+        <button onClick={() => setIsSidebarOpen(true)} className="md:hidden p-2 bg-amber-500 text-white rounded-lg shadow-lg fixed right-3 z-50">
           <Filter className="w-6 h-6" />
         </button>
       </div>
@@ -117,9 +117,8 @@ export default function ProductsClient({ initialProducts }: Props) {
       <div className="flex flex-col md:flex-row gap-8 ">
         {/* Sidebar */}
         <aside
-          className={`z-10 fixed md:static top-20 md:top-0 left-0 h-screen pt-2 md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${
-            isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0  z-[999]"
-          }`}
+          className={`z-10 fixed md:static top-20 md:top-0 left-0 h-screen pt-2 md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0  z-[999]"
+            }`}
         >
           {/* Close button */}
           <div className="flex justify-between items-center mb-4 md:hidden">
@@ -241,11 +240,10 @@ export default function ProductsClient({ initialProducts }: Props) {
                   <button
                     key={i + 1}
                     onClick={() => setPage(i + 1)}
-                    className={`px-4 py-2 rounded-md border transition ${
-                      page === i + 1
+                    className={`px-4 py-2 rounded-md border transition ${page === i + 1
                         ? "bg-amber-500 text-white"
                         : "bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-amber-100 dark:hover:bg-gray-600"
-                    }`}
+                      }`}
                   >
                     {i + 1}
                   </button>

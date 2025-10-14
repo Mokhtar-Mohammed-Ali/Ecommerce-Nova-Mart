@@ -9,8 +9,8 @@ providers: [
     name: 'Nova Mart',
   
     credentials: {
-      email: { label: "emai", type: "email", placeholder: "your email" },
-      password: { label: "Password", type: "password" }
+      email: { label: "email", type: "email", placeholder: "your email" },
+      password: { label: "Password", type: "password", placeholder: "your password" }
     },
     async authorize(credentials) {
       const res = await fetch(`https://ecommerce.routemisr.com/api/v1/auth/signin`, {
