@@ -117,7 +117,7 @@ export default function ProductsClient({ initialProducts }: Props) {
       <div className="flex flex-col md:flex-row gap-8 ">
         {/* Sidebar */}
         <aside
-          className={`z-10 fixed md:static top-20 md:top-0 left-0 h-screen pt-2 md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0  z-[999]"
+          className={`z-60 fixed md:static top-20 md:top-0 left-0 h-screen pt-2 md:h-fit w-3/4 sm:w-1/2 md:w-1/4 bg-gray-100 dark:bg-gray-800 p-6 rounded-none md:rounded-2xl shadow-lg transform transition-transform duration-300 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0  z-[999]"
             }`}
         >
           {/* Close button */}
